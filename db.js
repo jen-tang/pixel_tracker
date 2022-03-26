@@ -11,6 +11,7 @@ const User = new mongoose.Schema({
 const Item = new mongoose.Schema({
 	name: {type: String, required: true},
 	price: {type: Number, min: 0, required: true},
+	date: {type: Date, default: Date.now}
 }, {
 	_id: true
 });

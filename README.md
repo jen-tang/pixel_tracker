@@ -30,8 +30,8 @@ An Example Category with Embedded Items:
   user: // a reference to a User object
   name: "fun",
   items: [
-    { name: "Minecraft", price: "14.99"},
-    { name: "Batman Ticket", price: "12.99"},
+    { name: "Minecraft", price: "14.99", date: "10/23" },
+    { name: "Batman Ticket", price: "12.99", date: "10/24"},
   ],
   createdAt: // timestamp
 }
@@ -41,17 +41,17 @@ An Example Category with Embedded Items:
 
 ## Wireframes
 
-/expenses/add - page for adding expenses
+/login - page for login
 
-![expenses add](documentation/expenses-add.png)
+![login](documentation/login.heic)
 
 /expenses - page for showing all expenses in a list
 
-![expenses](documentation/expenses.png)
+![expenses](documentation/expenses.heic)
 
 /expenses/visualizations - page for visualizing expenses over time and by category
 
-![visualization](documentation/visualization.png)
+![visualization](documentation/visualization.heic)
 
 ## Site map
 
