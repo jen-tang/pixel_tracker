@@ -90,5 +90,5 @@ An Example Category with Embedded Items:
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
 2. [tutorial on vue.js](https://vuejs.org/v2/guide/)
-3. [introduction to d3.js] (https://observablehq.com/@d3/learn-d3)
+3. [introduction to d3.js](https://observablehq.com/@d3/learn-d3)
 
