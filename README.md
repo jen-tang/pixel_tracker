@@ -41,29 +41,23 @@ An Example Category with Embedded Items:
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
+/expenses/add - page for adding expenses
 
-/list/create - page for creating a new shopping list
+![expenses add](documentation/expenses-add.png)
 
-![list create](documentation/list-create.png)
+/expenses - page for showing all expenses in a list
 
-/list - page for showing all shopping lists
+![expenses](documentation/expenses.png)
 
-![list](documentation/list.png)
+/expenses/visualizations - page for visualizing expenses over time and by category
 
-/list/slug - page for showing specific shopping list
-
-![list](documentation/list-slug.png)
+![visualization](documentation/visualization.png)
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other_)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![Site map](documentation/site-map.png)
 
 ## User Stories or Use Cases
-
-(__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://www.mongodb.com/download-center?jmp=docs&_ga=1.47552679.1838903181.1489282706#previous)_)
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
@@ -74,21 +68,27 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## Research Topics
 
-* (5 points) Integrate user authentication
+* (3 points) Integrate user authentication
     * I'm going to be using passport for user authentication
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+    * Passport is an authentication middleware for node.js, which can be seamlessly implemented into my express application
+    * will probably use passport-http-bearer strategy since it seems popular and can easily be implemented into express
+* (5 points) d3.js
+    * I will use d3.js to visualize expense data
+    * d3 is a javascript library for visualizing data using web standards, so it's a great way to make data look readable and visually appealing
+    * will use d3.js with observable, since it seems like the most popular method
+    * d3 is a challenging library so I've assigned it 5 points, although subject to change
+* (3 points) vue.js
+    * vue is a frontend framework that is really good for one-page applications and is a view-oriented product
+    * it is very simple to create a one-page application, which is good for my app because it will be focused on the expenses page
+    * it is able to update small parts of pages easily, as entire page does not have to be refreshed, may be useful for adding expenses individually
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
-
+12 points total out of 8 required points.
 
 ## [Link to Initial Main Project File](app.js) 
 
 ## Annotations / References Used
 
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+1. [passport.js authentication docs](http://passportjs.org/docs)
+2. [tutorial on vue.js](https://vuejs.org/v2/guide/)
+3. [introduction to d3.js] (https://observablehq.com/@d3/learn-d3)
 
