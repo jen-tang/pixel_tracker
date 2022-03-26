@@ -43,15 +43,15 @@ An Example Category with Embedded Items:
 
 /login - page for login
 
-![login](documentation/login.heic)
+![login](documentation/login.png)
 
 /expenses - page for showing all expenses in a list
 
-![expenses](documentation/expenses.heic)
+![expenses](documentation/expenses.png)
 
 /expenses/visualizations - page for visualizing expenses over time and by category
 
-![visualization](documentation/visualization.heic)
+![visualization](documentation/visualization.png)
 
 ## Site map
 
