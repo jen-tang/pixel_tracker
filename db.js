@@ -5,19 +5,18 @@ const mongoose = require('mongoose'),
 
 const User = new mongoose.Schema({
   // username, password
-  lists:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'List' }]
+  categories:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }]
 });
 
 const Item = new mongoose.Schema({
 	name: {type: String, required: true},
-	quantity: {type: Number, min: 1, required: true},
-	checked: {type: Boolean, default: false, required: true}
+	price: {type: Number, min: 0, required: true},
 }, {
 	_id: true
 });
 
 
-const List = new mongoose.Schema({
+const Category = new mongoose.Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
   name: {type: String, required: true},
 	createdAt: {type: Date, required: true},
@@ -29,6 +28,6 @@ User.plugin(passportLocalMongoose);
 List.plugin(URLSlugs('name'));
 
 mongoose.model('User', User);
-mongoose.model('List', List);
+mongoose.model('Category', Category);
 mongoose.model('Item', Item);
 mongoose.connect('mongodb://localhost/grocerydb');

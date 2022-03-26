@@ -4,51 +4,40 @@
 
 Ever find yourself overspending and not realizing it until the end of the month? Or only having a vague sense of how much you've spent? That's what PixelTracker is focused on preventing, a handy way to track and visualize your expenses!
 
-Pixel Tracker is a web app that will allow users to 
-
-Remember those grade school days where kids avidly traded cards with each other? That nostalgia is what Vicard Delight aims to reach, where trading cards go virtual!
-
-Vircard Delight is a web app that will allow users to obtain a collection of trading cards (through daily login rewards or points from completing tasks), and trade them on the marketplace. Users can register and login. Once they're logged in, they can view their collection, and list items in their collection for sale. At the same time, users can trade for trading cards they do not have, allowing them to complete their collection.
-
+Pixel Tracker is a web app that will allow users to track their expenses once added. Users can register and login. Once they're logged in, they can add expenses by name and amount, along with categories. For each category, they can visualize expenses at the end of the month, and receive analytics in order to better optimize spending int he future.
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other_) 
+The application will store Users, Categories, and Items
 
-
-
-The application will store Users and Trading Cards
-
-* users can have multiple items (via references)
-
-(__TODO__: sample documents_)
+* users can have multiple categories (via references)
+* each category can have multiple items (by embedding)
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "shopaholic222",
   hash: // a password hash,
-  items: // an array of references to List documents
+  categories: // an array of references to Category documents
 }
 ```
 
-An Example List with Embedded Items:
+An Example Category with Embedded Items:
 
 ```javascript
 {
   user: // a reference to a User object
-  name: "Pikachu",
-  image: "Pikachu.jpg",
-  cost: 100,
+  name: "fun",
+  items: [
+    { name: "Minecraft", price: "14.99"},
+    { name: "Batman Ticket", price: "12.99"},
+  ],
   createdAt: // timestamp
 }
 ```
 
-
 ## [Link to Commented First Draft Schema](db.js) 
-
-(__TODO__: create a first draft of your Schemas in db.js and link to it_)
 
 ## Wireframes
 
@@ -78,20 +67,15 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+3. as a user, I can create categories to label my expenses with
+4. as a user, I can view all of my expenses in a single list
+5. as a user, I can add expenses under each category
+6. as a user, I can visualize expenses weekly/monthly in total or by category
 
 ## Research Topics
 
-(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
-
 * (5 points) Integrate user authentication
     * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
 * (4 points) Perform client side form validation using a JavaScript library
     * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
     * if you put in a number that's greater than 5, an error message will appear in the dom
@@ -103,11 +87,7 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## [Link to Initial Main Project File](app.js) 
 
-(__TODO__: create a skeleton Express application with a package.json, app.js, views folder, etc. ... and link to your initial app.js_)
-
 ## Annotations / References Used
-
-(__TODO__: list any tutorials/references/etc. that you've based your code off of_)
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
