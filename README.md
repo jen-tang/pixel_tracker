@@ -47,7 +47,7 @@ An Example Category with Embedded Items:
 
 /expenses - page for showing all expenses in a list
 
-![expenses](documentation/expenses.PNG)
+![expenses](https://github.com/nyu-csci-ua-0467-001-002-spring-2022/final-project-jen-tang/blob/master/documentation/expenses.png)
 
 /expenses/visualizations - page for visualizing expenses over time and by category
 
