@@ -82,7 +82,7 @@ An Example Category with Embedded Items:
     * it is very simple to create a one-page application, which is good for my app because it will be focused on the expenses page
     * it is able to update small parts of pages easily, as entire page does not have to be refreshed, may be useful for adding expenses individually
 
-12 points total out of 8 required points.
+11 points total out of 8 required points.
 
 ## [Link to Initial Main Project File](app.js) 
 
