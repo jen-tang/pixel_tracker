@@ -43,7 +43,7 @@ An Example Category with Embedded Items:
 
 /login - page for login
 
-![login](documentation/login.PNG)
+![login](https://github.com/nyu-csci-ua-0467-001-002-spring-2022/final-project-jen-tang/blob/master/documentation/login.png)
 
 /expenses - page for showing all expenses in a list
 
