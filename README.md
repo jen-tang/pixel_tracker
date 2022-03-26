@@ -1,26 +1,25 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(__TODO__: your project name_)
-
-# Shoppy Shoperson 
+# PixelTracker
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project_)
+Ever find yourself overspending and not realizing it until the end of the month? Or only having a vague sense of how much you've spent? That's what PixelTracker is focused on preventing, a handy way to track and visualize your expenses!
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+Pixel Tracker is a web app that will allow users to 
 
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+Remember those grade school days where kids avidly traded cards with each other? That nostalgia is what Vicard Delight aims to reach, where trading cards go virtual!
+
+Vircard Delight is a web app that will allow users to obtain a collection of trading cards (through daily login rewards or points from completing tasks), and trade them on the marketplace. Users can register and login. Once they're logged in, they can view their collection, and list items in their collection for sale. At the same time, users can trade for trading cards they do not have, allowing them to complete their collection.
 
 
 ## Data Model
 
 (__TODO__: a description of your application's data and their relationships to each other_) 
 
-The application will store Users, Lists and Items
 
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
+
+The application will store Users and Trading Cards
+
+* users can have multiple items (via references)
 
 (__TODO__: sample documents_)
 
@@ -30,7 +29,7 @@ An Example User:
 {
   username: "shannonshopper",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  items: // an array of references to List documents
 }
 ```
 
@@ -39,11 +38,9 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
+  name: "Pikachu",
+  image: "Pikachu.jpg",
+  cost: 100,
   createdAt: // timestamp
 }
 ```
