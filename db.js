@@ -32,3 +32,6 @@ mongoose.model('User', User);
 mongoose.model('Category', Category);
 mongoose.model('Item', Item);
 //mongoose.connect('mongodb://localhost/grocerydb');
+
+
+mongoose.connect('mongodb+srv://twinkly:<star1234>@pixeltracker.0fpza.mongodb.net/PixelTracker?retryWrites=true&w=majority');
