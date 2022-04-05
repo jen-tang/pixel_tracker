@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "The content below is an example project proposal / requirements document. Replace the text below the lines marked \"__TODO__\" with details specific to your project. Remove the \"TODO\" lines.",
   "main": "app.js",
+  "engines": {
+    "node": "16.13.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
