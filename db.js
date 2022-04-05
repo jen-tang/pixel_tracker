@@ -31,4 +31,4 @@ Category.plugin(URLSlugs('name'));
 mongoose.model('User', User);
 mongoose.model('Category', Category);
 mongoose.model('Item', Item);
-mongoose.connect('mongodb://localhost/grocerydb');
+//mongoose.connect('mongodb://localhost/grocerydb');
