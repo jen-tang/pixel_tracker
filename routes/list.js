@@ -1,7 +1,7 @@
 const express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	List = mongoose.model('List');
+	Category = mongoose.model('Category');
 
 const isAuthenticated = (req, res, next) => {
   if(!req.user) {
@@ -15,7 +15,7 @@ const isAuthenticated = (req, res, next) => {
 router.use(isAuthenticated)
 
 router.get('/', (req, res) => {
-	List.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
+	Category.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
 		res.render('list-all.hbs', {lists:lists});
 	});
 });
@@ -26,7 +26,7 @@ router.get('/create', (req, res) => {
 
 router.post('/create', (req, res) => {
 	const {name} = req.body;
-	new List({
+	new Category({
     user: req.user._id,
 		name: name,
 		createdAt: Date.now()
@@ -37,7 +37,7 @@ router.post('/create', (req, res) => {
 
 router.get('/:slug', (req, res) => {
 	const {slug} = req.params;
-	List.findOne({slug}, (err, list, count) => {
+	Category.findOne({slug}, (err, list, count) => {
 		res.render('list-slug.hbs', {list, displayListItems:list.items.length >= 1});
 	});
 });

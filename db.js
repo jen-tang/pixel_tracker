@@ -26,9 +26,9 @@ const Category = new mongoose.Schema({
 
 
 User.plugin(passportLocalMongoose);
-List.plugin(URLSlugs('name'));
+Category.plugin(URLSlugs('name'));
 
 mongoose.model('User', User);
 mongoose.model('Category', Category);
 mongoose.model('Item', Item);
-mongoose.connect('mongodb://localhost/grocerydb');
+mongoose.connect('mongodb://localhost/expensedb');
