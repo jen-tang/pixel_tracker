@@ -1,6 +1,32 @@
-<h2>Grocery Lists</h2>
-{{#each lists}}
+<h2>Expenses</h2>
+{{!-- {{#each lists}}
 <ul>
 <li><a href="/list/{{this.slug}}">{{this.name}}</a></li>
 </ul>
+{{/each}} --}}
+
+<form class="form-section" method="POST">
+		<div><label>Name: </label><input type="text" name="name" value=""></div>
+		<div><label>Cost: </label><input type="text" name="cost" value=""></div>
+        <div><label>Date: </label><input type="text" name="date" value="">	</div>
+        <div><label>Category: </label><input type="text" name="category" value=""></div>
+		<input id="item" type="submit" value="Add">	
+</form>
+
+
+<table>
+<tr>
+<td>Name</td>
+<td>Cost</td>
+<td>Date</td>
+<td>Category</td>
+</tr>
+{{#each lists}}
+<tr>
+<td>{{name}}</td>
+<td>{{price}}</td>
+<td>{{date}}</td>
+<td>{{category}}</td>
+</tr>
 {{/each}}
+</table>

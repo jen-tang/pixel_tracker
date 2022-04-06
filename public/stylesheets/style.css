@@ -1,64 +1,79 @@
+
 body {
-  padding: 50px;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 
-a {
-  color: #0073AA;
+.logstatus{
+	float: right;
+	margin-right: 25px;
+	
 }
 
-.form-row {
-	padding:0.5em;
+header{
+    background-color: lavender;
+    color: darkmagenta;
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 3px;
 }
 
-form {
-	margin-top:1em;
-	margin-bottom:1em;
+html {
+    font-family: Georgia, serif;
+    background-color: lavender}
+
+.about-session{
+	margin-left: 985px;
+}
+.navigation {
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .navigation a {
+    float: right;
+    color: darkmagenta;
+    text-align: center;
+    padding: 2px 10px;
+    text-decoration: none;
+    font-size: 17px;
+
+    margin-bottom: 10px;
+  }
+#filter input{
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-#wrapper {
-	width:500px;
-	padding:2em;
-  	background-color:#eee;
+table, tr, td {
+    border: 1px solid;
+    border-collapse: collapse;
+	
+  }
+
+table{
+    width: 70%;
+	margin-left: auto;
+    margin-right: auto;
+}
+td{
+    text-align: center;
+    height: 30px;
+}
+.change{
+    position: absolute;
+    right:    52%;
+    bottom:   22%;
+    margin-bottom: 0;
 }
 
-#grocery-list {
-	background-color:#ddd;
-	padding: 1em;
+.form-section div{
+	margin-bottom: 10px;
 }
 
-#grocery-list li {
-	list-style-type: none;
-	padding-top:0.25em;
-	padding-bottom:0.25em;
+h1,h3{
+	margin-left: 12px;
 }
-
-#grocery-list li.checked {
-	text-decoration: line-through;
-	padding: 0.25em 0.25em 0.25em 1.5em;
-}
-
-.qty {
-	width: 3em;
-}
-
-input[type='checkbox'] {
-	margin-right: 1em;
-}
-
-input[type=submit] {
-	padding:5px 15px; 
-	background:#ccc; 
-	border:0 none;
-	cursor:pointer;
-	font-size:1em;
-}
-
-input {
-	font-size:1em;
-}
-
-input[type=submit]:hover {
-	background-color: #0073AA;
-	color: white;
+h2{
+	text-align: center;
 }

@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', routes);
-app.use('/list', list);
-app.use('/list-item', listItem);
+app.use('/expenses', list);
+//app.use('/list-item', listItem);
 
 app.listen(process.env.PORT || 3000);

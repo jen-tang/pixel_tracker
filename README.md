@@ -8,10 +8,10 @@ Pixel Tracker is a web app that will allow users to track their expenses once ad
 
 ## Data Model
 
-The application will store Users, Categories, and Items
+The application will store Users and Items
 
-* users can have multiple categories (via references)
-* each category can have multiple items (by embedding)
+* users can have multiple items (via references)
+* each category can have multiple categories (by embedding)
 
 An Example User:
 
@@ -19,20 +19,19 @@ An Example User:
 {
   username: "shopaholic222",
   hash: // a password hash,
-  categories: // an array of references to Category documents
+  items: // an array of references to Item documents
 }
 ```
 
-An Example Category with Embedded Items:
+An Example Item:
 
 ```javascript
 {
   user: // a reference to a User object
-  name: "fun",
-  items: [
-    { name: "Minecraft", price: "14.99", date: "10/23" },
-    { name: "Batman Ticket", price: "12.99", date: "10/24"},
-  ],
+  name: "Minecraft", 
+  price: "14.99", 
+  date: "10/23",
+  category: "fun",
   createdAt: // timestamp
 }
 ```
@@ -72,23 +71,20 @@ An Example Category with Embedded Items:
     * I'm going to be using passport for user authentication
     * Passport is an authentication middleware for node.js, which can be seamlessly implemented into my express application
     * will probably use passport-http-bearer strategy since it seems popular and can easily be implemented into express
+* (1 point) MongoDB Atlas + Heroku
+    * Deploy on Heroku and connect MongoDB Atlas to create a containerized application
 * (5 points) d3.js
     * I will use d3.js to visualize expense data
     * d3 is a javascript library for visualizing data using web standards, so it's a great way to make data look readable and visually appealing
     * will use d3.js with observable, since it seems like the most popular method
     * d3 is a challenging library so I've assigned it 5 points, although subject to change
-* (3 points) vue.js
-    * vue is a frontend framework that is really good for one-page applications and is a view-oriented product
-    * it is very simple to create a one-page application, which is good for my app because it will be focused on the expenses page
-    * it is able to update small parts of pages easily, as entire page does not have to be refreshed, may be useful for adding expenses individually
 
-11 points total out of 8 required points.
+9 points total out of 8 required points.
 
 ## [Link to Initial Main Project File](app.js) 
 
 ## Annotations / References Used
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
-2. [tutorial on vue.js](https://vuejs.org/v2/guide/)
-3. [introduction to d3.js](https://observablehq.com/@d3/learn-d3)
+2. [introduction to d3.js](https://observablehq.com/@d3/learn-d3)
 

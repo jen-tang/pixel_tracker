@@ -1,14 +1,13 @@
 const express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	Category = mongoose.model('Category'),
 	Item = mongoose.model('Item');
 
 router.post('/create', (req, res) => {
 	const {listSlug, name, quantity}  = req.body;
 	const listItem = {name, quantity};
 
-	Category.findOneAndUpdate({slug:listSlug}, {$push: {items: listItem}}, (err, list, count) => {
+	Item.findOneAndUpdate({slug:listSlug}, {$push: {items: listItem}}, (err, list, count) => {
     console.log(err);
 		res.redirect(`/list/${listSlug}`);
 	});
@@ -17,7 +16,7 @@ router.post('/create', (req, res) => {
 router.post('/check', (req, res) => {
 	const {listSlug, items} = req.body;
 
-	Category.findOne({slug:listSlug}, (err, list, count) => {
+	Item.findOne({slug:listSlug}, (err, list, count) => {
     console.log(`items: ${items}, list: ${list}`);
 		for (let i = 0; i < list.items.length; i++) {
       console.log(list.items[i]);
@@ -26,7 +25,7 @@ router.post('/check', (req, res) => {
 			}
 		}
 		list.markModified('items');
-		list.save((err, savedList, count) => {
+		list.save((err, savedpass, count) => {
       console.log(err);
 			res.redirect(`/list/${listSlug}`);
 		});
