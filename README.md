@@ -92,4 +92,5 @@ An Example Item:
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
 2. [introduction to d3.js](https://observablehq.com/@d3/learn-d3)
-
+3. [moment.js beginner guide](https://momentjs.com/guides/)
+4. [deploying with heroku](https://devcenter.heroku.com/articles/deploying-nodejs#provision-a-database)
