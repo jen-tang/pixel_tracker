@@ -13,7 +13,7 @@ const Item = new mongoose.Schema({
 	name: {type: String, required: true},
 	price: {type: Number, min: 0, required: true},
 	category: {type: String, required: false},
-	date: {type: Date, default: Date.now}
+	date: {type: Date, default: Date.now, required: false}
 }, {
 	_id: true
 });

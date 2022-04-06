@@ -5,10 +5,17 @@ require('./auth');
 const passport = require('passport');
 const express = require('express');
 const path = require('path');
+const hb = require('hbs');
+const moment = require("moment");
+
+//ideas from https://blog.8bitzen.com/posts/01-07-2020-define-handlebars-helper-to-format-date
+hb.registerHelper('dateFormat', function (date, options) {
+  const formatToUse = (arguments[1] && arguments[1].hash && arguments[1].hash.format) || "DD/MM/YYYY"
+  return moment(date).format(formatToUse);
+});
 
 const routes = require('./routes/index');
-const list = require('./routes/list');
-const listItem = require('./routes/list-item');
+const listItem = require('./routes/expenses');
 
 const app = express();
 
@@ -39,7 +46,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', routes);
-app.use('/expenses', list);
+app.use('/expenses', listItem);
 //app.use('/list-item', listItem);
 
 app.listen(process.env.PORT || 3000);

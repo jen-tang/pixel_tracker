@@ -28,7 +28,7 @@ router.post('/register', (req, res) =>  {
       res.render('register',{message:'Your registration information is not valid'});
     } else {
       passport.authenticate('local')(req, res, function() {
-        res.redirect('/');
+        res.redirect('/expenses');
       });
     }
   });   
@@ -38,7 +38,7 @@ router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user) => {
     if(user) {
       req.logIn(user, (err) => {
-        res.redirect('/');
+        res.redirect('/expenses');
       });
     } else {
       res.render('login', {message:'Your login or password is incorrect.'});

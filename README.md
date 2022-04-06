@@ -67,12 +67,17 @@ An Example Item:
 
 ## Research Topics
 
-* (3 points) Integrate user authentication
+* (2 points) Integrate user authentication
     * I'm going to be using passport for user authentication
     * Passport is an authentication middleware for node.js, which can be seamlessly implemented into my express application
     * will probably use passport-http-bearer strategy since it seems popular and can easily be implemented into express
 * (1 point) MongoDB Atlas + Heroku
-    * Deploy on Heroku and connect MongoDB Atlas to create a containerized application
+    * I will be deploying on Heroku and connecting MongoDB Atlas
+    * Heroku is service for containerized application deploy and MongoDB Atlas is MongoDB's cloud database offering
+* (1 point) Moment.js
+    * Moment.js is a JavaScript date library for parsing, validating, manipulating, and formatting dates
+    * I am using Moment.js for parsing and converting dates stored in MongoDB to human readable format
+    * Only used for a very small portion of project, so I've assigned it simply 1 point
 * (5 points) d3.js
     * I will use d3.js to visualize expense data
     * d3 is a javascript library for visualizing data using web standards, so it's a great way to make data look readable and visually appealing
