@@ -74,11 +74,12 @@ router.post('/', (req, res) => {
 
 
 
-router.get('/visualizations', (req, res) => {
-  res.render('visualizations.hbs');
+router.get('/visualization', (req, res) => {
+	const data = [100, 50, 300, 40, 350, 250]; // assuming this is coming from the database
+  	res.render('visualization.hbs', {data});
 });
 
-router.post('/visualizations', (req, res) => {
+router.post('/visualization', (req, res) => {
 /* 	const {name} = req.body;
 	new Item({
     user: req.user._id,
