@@ -77,3 +77,11 @@ h1,h3{
 h2{
 	text-align: center;
 }
+
+#delete{
+    padding-top: 10px;
+    
+}
+#delete div{
+	margin-bottom: 10px;
+}

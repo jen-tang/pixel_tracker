@@ -22,9 +22,26 @@ const isAuthenticated = (req, res, next) => {
 router.use(isAuthenticated)
 
 router.get('/', (req, res) => {
-	Item.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
-		res.render('expenses.hbs', {lists:lists});
-	});
+
+	if(req.query.delname){
+		
+		Item.findOneAndDelete({ name: req.query.delname }, function (err) {
+			if(err) {
+				console.log(err);}
+			else{
+				console.log("Successful deletion");
+				Item.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
+					res.render('expenses.hbs', {lists:lists});
+				});
+			}
+			
+	});}
+	else{
+		Item.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
+			res.render('expenses.hbs', {lists:lists});
+		});
+	}
+
 });
 
 router.post('/', (req, res) => {
@@ -38,8 +55,9 @@ router.post('/', (req, res) => {
     if(!req.user.myexpenses){
         req.session.myexpenses = [];
     }
-
 	
+
+
     new Item({
 		user: req.user._id,
 		name: iname,
@@ -50,24 +68,26 @@ router.post('/', (req, res) => {
 	}).save(function(err, ret, count){
 		res.redirect('back');
 	});
+
+
 });
 
 
 
-/* router.get('/create', (req, res) => {
-  res.render('list-create.hbs');
+router.get('/visualizations', (req, res) => {
+  res.render('visualizations.hbs');
 });
 
-router.post('/create', (req, res) => {
-	const {name} = req.body;
+router.post('/visualizations', (req, res) => {
+/* 	const {name} = req.body;
 	new Item({
     user: req.user._id,
 		name: name,
 		createdAt: Date.now()
 	}).save((err, list, count) => {
 		res.redirect(`/`);
-	});
-}); */
+	}); */
+}); 
 
 /* router.post('/create', (req, res) => {
 	const {name} = req.body;

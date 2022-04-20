@@ -4,7 +4,7 @@
 
 Ever find yourself overspending and not realizing it until the end of the month? Or only having a vague sense of how much you've spent? That's what PixelTracker is focused on preventing, a handy way to track and visualize your expenses!
 
-Pixel Tracker is a web app that will allow users to track their expenses once added. Users can register and login. Once they're logged in, they can add expenses by name and amount, along with categories. For each category, they can visualize expenses at the end of the month, and receive analytics in order to better optimize spending int he future.
+Pixel Tracker is a web app that will allow users to track their expenses once added. Users can register and login. Once they're logged in, they can add expenses by name and amount, along with categories. For each category, they can visualize expenses at the end of the month, and receive analytics in order to better optimize spending in the future.
 
 ## Data Model
 
