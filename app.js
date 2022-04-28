@@ -4,13 +4,14 @@ require('./auth');
 
 const passport = require('passport');
 const express = require('express');
-const path = require('path');
 const hb = require('hbs');
 const moment = require("moment");
+const tablesort = require('tablesort');
+
 
 //ideas from https://blog.8bitzen.com/posts/01-07-2020-define-handlebars-helper-to-format-date
 hb.registerHelper('dateFormat', function (date, options) {
-  const formatToUse = (arguments[1] && arguments[1].hash && arguments[1].hash.format) || "DD/MM/YYYY"
+  const formatToUse = (arguments[1] && arguments[1].hash && arguments[1].hash.format) || "MM/DD/YYYY"
   return moment(date).format(formatToUse);
 });
 
@@ -23,6 +24,8 @@ const app = express();
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+
 // enable sessions
 const session = require('express-session');
 const sessionOptions = {
@@ -32,8 +35,11 @@ const sessionOptions = {
 };
 app.use(session(sessionOptions));
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+
+//static file setup
+const path = require('path');
+app.use(express.static(path.join(__dirname, '/public')));
 
 // passport setup
 app.use(passport.initialize());

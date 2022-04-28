@@ -2,13 +2,7 @@ const express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
 	Item = mongoose.model('Item');
-	hb = require('handlebars');
-	moment = require("moment");
 
-hb.registerHelper('dateFormat', function (date, options) {
-		const formatToUse = (arguments[1] && arguments[1].hash && arguments[1].hash.format) || "DD/MM/YYYY"
-		return moment(date).format(formatToUse);
-});
 
 const isAuthenticated = (req, res, next) => {
   if(!req.user) {
@@ -23,9 +17,10 @@ router.use(isAuthenticated)
 
 router.get('/', (req, res) => {
 
+
 	if(req.query.delname){
 		
-		Item.findOneAndDelete({ name: req.query.delname }, function (err) {
+		Item.findOneAndDelete({user: req.user._id, name: req.query.delname }, function (err) {
 			if(err) {
 				console.log(err);}
 			else{
@@ -36,6 +31,12 @@ router.get('/', (req, res) => {
 			}
 			
 	});}
+	else if(req.query.category){
+		Item.find({user: req.user._id, category: req.query.category}, function(err, ret, count) {
+            res.render('expenses.hbs', {lists: ret});
+            //console.log(varToStoreResult); // <---- variable contains found documents!
+            });
+	}
 	else{
 		Item.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
 			res.render('expenses.hbs', {lists:lists});
@@ -75,8 +76,17 @@ router.post('/', (req, res) => {
 
 
 router.get('/visualization', (req, res) => {
-	const data = [100, 50, 300, 40, 350, 250]; // assuming this is coming from the database
-  	res.render('visualization.hbs', {data});
+	//const data = [100, 50, 300, 40, 350, 250]; // assuming this is coming from the database
+  	
+	Item.find({user: req.user ? req.user._id : undefined}, (err, lists, count) => {
+		
+		
+	var result = lists.reduce(function (acc, obj) { return acc + obj.price; }, 0);
+
+
+	res.render('visualization.hbs', {lists:lists, result: result});
+	});
+	
 });
 
 router.post('/visualization', (req, res) => {

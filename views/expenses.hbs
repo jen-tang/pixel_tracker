@@ -1,3 +1,16 @@
+{{!-- 
+<script src='../javascripts/script.js'></script>
+
+
+
+<script src="../api/tablesort/tablesort.min.js"></script>
+<script src="../api/tablesort/tablesort.date.min.js"></script>
+<script src="../api/tablesort/tablesort.dotsep.min.js"></script>
+<script src="../api/tablesort/tablesort.filesize.min.js"></script>
+<script src="../api/tablesort/tablesort.monthname.min.js"></script>
+<script src="../api/tablesort/tablesort.number.min.js"></script> --}}
+
+<script src="../javascripts/sorttable.js"></script>
 <h2>Expenses</h2>
 {{!-- {{#each lists}}
 <ul>
@@ -5,6 +18,8 @@
 </ul>
 {{/each}} --}}
 
+<div id="form-table">
+<div id="add">
 <form class="form-section" method="POST">
 		<div><label>Name: </label><input type="text" name="name" value=""></div>
 		<div><label>Cost: </label><input type="text" name="cost" value=""></div>
@@ -12,7 +27,9 @@
         <div><label>Category: </label><input type="text" name="category" value=""></div>
 		<input id="item" type="submit" value="Add">	
 </form>
+</div>
 
+<div id="second">
 <div id="delete">
 <form method="GET" action="">
 		<div><label>Name: </label><input type="text" name="delname" value=""></div>	
@@ -20,20 +37,32 @@
 </form>
 </div>
 
-<table>
+<div id="filter">
+<form method="GET" action="">
+		<div><label>Category: </label><input type="text" name="category" value=""></div>	
+		<input type="submit" value="Filter">
+</form>
+</div>
+</div>
+</div>
+
+<table id='sort' class="sortable">
+<thead>
 <tr>
-<td>Name</td>
-<td>Cost</td>
-<td>Date</td>
-<td>Category</td>
+<th>Name</th>
+<th>Cost</th>
+<th>Date</th>
+<th>Category</th>
 </tr>
+</thead>
+<tbody>
 {{#each lists}}
 <tr>
 <td>{{name}}</td>
-<td>{{price}}</td>
+<td>${{price}}</td>
 <td>{{dateFormat date}}</td>
-
 <td>{{category}}</td>
 </tr>
 {{/each}}
+</tbody>
 </table>

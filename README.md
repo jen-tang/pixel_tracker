@@ -60,7 +60,7 @@ An Example Item:
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create categories to label my expenses with
+3. as a user, I can sort my expenses by category
 4. as a user, I can view all of my expenses in a single list
 5. as a user, I can add expenses under each category
 6. as a user, I can visualize expenses weekly/monthly in total or by category
@@ -78,13 +78,17 @@ An Example Item:
     * Moment.js is a JavaScript date library for parsing, validating, manipulating, and formatting dates
     * I am using Moment.js for parsing and converting dates stored in MongoDB to human readable format
     * Only used for a very small portion of project, so I've assigned it simply 1 point
-* (5 points) d3.js
+* (1 point) sorttable.js
+    * sorttable is a very simple front-end javascript library to implement clickable sorting on tables
+    * I am using sorttable to sort my expenses page cleanly
+    * Very simple implementation, so I've assigned it only 1 point (although it took me an embarassingly long time to figure it out)
+* (3 points) d3.js
     * I will use d3.js to visualize expense data
     * d3 is a javascript library for visualizing data using web standards, so it's a great way to make data look readable and visually appealing
     * will use d3.js with observable, since it seems like the most popular method
-    * d3 is a challenging library so I've assigned it 5 points, although subject to change
+    * I only used the very basics of d3.js, so I've assigned it 3 points
 
-9 points total out of 8 required points.
+8 points total out of 8 required points.
 
 ## [Link to Initial Main Project File](app.js) 
 
