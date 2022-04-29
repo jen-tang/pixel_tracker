@@ -1,4 +1,8 @@
+<script src="https://d3js.org/d3.v4.js"></script>
+
 <h2>Visualization & Statistics</h2>
+<div id="stat-section">
+
 
 
 <h3>Quick Stats:</h3>
@@ -13,5 +17,80 @@
 <div>{{category}}: ${{totalSum}}</div>
 {{/each}}
 
-
 </div>
+</div>
+<div id="chart-section">
+<h3 id="h31">Graph of Spending by Category</h3>
+<div id="chart"></div>
+</div>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+
+
+
+<script>
+//reference from https://d3-graph-gallery.com/graph/pie_annotation.html
+
+
+// set the dimensions and margins of the graph
+var width = 600
+    height = 600
+    margin = 40
+
+// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+var radius = Math.min(width, height) / 2 - margin
+
+// append the svg object to the div called 'my_dataviz'
+var svg = d3.select("#chart")
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+// Create dummy data
+var data = {{{graph}}}
+
+console.log(data);
+// set the color scale
+var color = d3.scaleOrdinal()
+  .domain(data)
+  .range(d3.schemeSet2);
+
+// Compute the position of each group on the pie:
+var pie = d3.pie()
+  .value(function(d) {return d.value; })
+var data_ready = pie(d3.entries(data))
+
+var arcGenerator = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius)
+
+// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+svg
+  .selectAll('whatever')
+  .data(data_ready)
+  .enter()
+  .append('path')
+  .attr('d', d3.arc()
+    .innerRadius(0)
+    .outerRadius(radius)
+  )
+  .attr('fill', function(d){ return(color(d.data.key)) })
+  .attr("stroke", "black")
+  .style("stroke-width", "2px")
+  .style("opacity", 0.7)
+
+
+svg
+  .selectAll('whatever')
+  .data(data_ready)
+  .enter()
+  .append('text')
+  .text(function(d){ return d.data.key})
+  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+  .style("text-anchor", "middle")
+  .style("font-size", 17)
+
+</script>

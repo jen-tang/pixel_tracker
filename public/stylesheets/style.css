@@ -113,3 +113,18 @@ h2{
 #stats{
     margin-left: 12px;
 }
+
+#stat-section{
+    float: left;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#chart-section{
+    float: right;
+    margin-right: 40px;
+}
+
+#h31{
+    padding-left: 120px;
+}

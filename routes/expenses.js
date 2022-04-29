@@ -103,14 +103,21 @@ router.get('/visualization', (req, res) => {
 			return {category: r.category, totalSum: r.totalSum.toFixed(2)};
 		
 		});
-		console.log(categorytotals);
+
+
+		let finalcategorytotals = {};
+		finalcategorytotals = categorytotals.map(r=>{
+			finalcategorytotals[r.category] = r.totalSum;
+			return finalcategorytotals;
+		})
+		console.log(finalcategorytotals)
 	let maxprice = lists.reduce(function(prev, current) {
 		return (prev.price > current.price) ? prev : current
 	})
 	//maxprice = maxprice.name;
-	 
+	
 
-	res.render('visualization.hbs', {lists:lists, result: result, category: categorytotals, item: maxprice});
+	res.render('visualization.hbs', {lists:lists, result: result, category: categorytotals, item: maxprice, graph: JSON.stringify(finalcategorytotals[0])});
 	});
 	
 });
