@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 	if(req.query.delname){
 		
-		Item.findOneAndDelete({user: req.user._id, name: req.query.delname }, function (err) {
+		Item.findOneAndDelete({user: req.user._id, name: {'$regex': req.query.delname,$options:'i'}}, function (err) {
 			if(err) {
 				console.log(err);}
 			else{
@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 			
 	});}
 	else if(req.query.category){
-		Item.find({user: req.user._id, category: req.query.category}, function(err, ret, count) {
+		Item.find({user: req.user._id, category: {'$regex': req.query.category,$options:'i'}}, function(err, ret, count) {
             res.render('expenses.hbs', {lists: ret});
             //console.log(varToStoreResult); // <---- variable contains found documents!
             });
@@ -110,7 +110,6 @@ router.get('/visualization', (req, res) => {
 			finalcategorytotals[r.category] = r.totalSum;
 			return finalcategorytotals;
 		})
-		console.log(finalcategorytotals)
 	let maxprice = lists.reduce(function(prev, current) {
 		return (prev.price > current.price) ? prev : current
 	})
