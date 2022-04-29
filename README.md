@@ -63,7 +63,7 @@ An Example Item:
 3. as a user, I can sort my expenses by category
 4. as a user, I can view all of my expenses in a single list
 5. as a user, I can add expenses under each category
-6. as a user, I can visualize expenses weekly/monthly in total or by category
+6. as a user, I can visualize expenses by category
 
 ## Research Topics
 
@@ -85,7 +85,6 @@ An Example Item:
 * (3 points) d3.js
     * I will use d3.js to visualize expense data
     * d3 is a javascript library for visualizing data using web standards, so it's a great way to make data look readable and visually appealing
-    * will use d3.js with observable, since it seems like the most popular method
     * I only used the very basics of d3.js, so I've assigned it 3 points
 
 8 points total out of 8 required points.
@@ -98,3 +97,4 @@ An Example Item:
 2. [introduction to d3.js](https://observablehq.com/@d3/learn-d3)
 3. [moment.js beginner guide](https://momentjs.com/guides/)
 4. [deploying with heroku](https://devcenter.heroku.com/articles/deploying-nodejs#provision-a-database)
+5. [sorttable docs](https://www.kryogenix.org/code/browser/sorttable/)
