@@ -1,5 +1,17 @@
 <h2>Visualization & Statistics</h2>
 
 
+<h3>Quick Stats:</h3>
+<div id="stats">
+<div>Total Spent: ${{result}}</div>
 
-{{result}}
+<div>Most expensive item: {{item.name}} at ${{item.price}}. wow 😲</div>
+
+
+<h4>Spending By Category:</h4>
+{{#each category}}
+<div>{{category}}: ${{totalSum}}</div>
+{{/each}}
+
+
+</div>

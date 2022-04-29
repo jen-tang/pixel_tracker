@@ -84,7 +84,33 @@ router.get('/visualization', (req, res) => {
 	var result = lists.reduce(function (acc, obj) { return acc + obj.price; }, 0);
 
 
-	res.render('visualization.hbs', {lists:lists, result: result});
+	let categorytotals = Object.values(
+    lists.reduce(
+      (r, { category, price }) => (
+        (r[category] = {
+          category,
+          totalSum: ((r[category]?.totalSum || 0) + +price),
+        }),
+        r
+      ),
+      {}
+    )
+  );
+
+
+		
+		categorytotals = categorytotals.map(r => {
+			return {category: r.category, totalSum: r.totalSum.toFixed(2)};
+		
+		});
+		console.log(categorytotals);
+	let maxprice = lists.reduce(function(prev, current) {
+		return (prev.price > current.price) ? prev : current
+	})
+	//maxprice = maxprice.name;
+	 
+
+	res.render('visualization.hbs', {lists:lists, result: result, category: categorytotals, item: maxprice});
 	});
 	
 });
